@@ -773,7 +773,7 @@ button:focus {
   left: 8px;
  
   width: 90%;
-  text-align: left;
+  text-align: center;
   text-wrap: wrap;
   height: 110px;
   /* top: 100px; Start position for the animation */
