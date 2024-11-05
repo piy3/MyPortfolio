@@ -770,7 +770,10 @@ button:focus {
   justify-content: center;
   background-color: purple;
   border-radius: 5px;
-  width: 200px;
+  left: 2px;
+  width: 100%;
+  text-align: left;
+  text-wrap: wrap;
   height: 110px;
   /* top: 100px; Start position for the animation */
 }
@@ -793,5 +796,5 @@ button:focus {
   }
 }
 .tech-icons h3{
-  font-size: 30px;
+  /* font-size: 30px; */
 }
