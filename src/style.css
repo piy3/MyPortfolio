@@ -776,7 +776,6 @@ button:focus {
   text-align: center;
   text-wrap: wrap;
   height: 110px;
-  /* top: 100px; Start position for the animation */
 }
 
 /* Show the name div on hover and apply animation */

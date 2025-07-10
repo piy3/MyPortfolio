@@ -1,24 +1,22 @@
 import React, { useState } from "react";
+import { useLocation, Link } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import './navbar.css'
 import Container from "react-bootstrap/Container";
-import logo from "../Assets/logo.png";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
-import { CgGitFork } from "react-icons/cg";
-import { ImBlog } from "react-icons/im";
 import {
   AiFillStar,
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
 } from "react-icons/ai";
-
-import { CgFileDocument } from "react-icons/cg";
+import { CgFileDocument, CgGitFork } from "react-icons/cg";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+  const location = useLocation();
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -30,6 +28,9 @@ function NavBar() {
 
   window.addEventListener("scroll", scrollHandler);
 
+  const getLinkClass = (path) =>
+     location.pathname === path ? "nav-link active-link" : "nav-link";
+
   return (
     <Navbar
       expanded={expand}
@@ -38,9 +39,7 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand href="/" className="d-flex">
-          {/* <img src={'https://i.pinimg.com/736x/bb/fc/89/bbfc89f1970fab764cde53bcf7060cc7.jpg'} className="img-fluid logo" alt="brand" /> */}
-        </Navbar.Brand>
+        <Navbar.Brand href="/" className="d-flex"></Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
@@ -54,7 +53,12 @@ function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+              <Nav.Link
+                as={Link}
+                to="/"
+                className={getLinkClass("/")}
+                onClick={() => updateExpanded(false)}
+              >
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
               </Nav.Link>
             </Nav.Item>
@@ -63,6 +67,7 @@ function NavBar() {
               <Nav.Link
                 as={Link}
                 to="/about"
+                className={getLinkClass("/about")}
                 onClick={() => updateExpanded(false)}
               >
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> About
@@ -73,12 +78,10 @@ function NavBar() {
               <Nav.Link
                 as={Link}
                 to="/project"
+                className={getLinkClass("/project")}
                 onClick={() => updateExpanded(false)}
               >
-                <AiOutlineFundProjectionScreen
-                  style={{ marginBottom: "2px" }}
-                />{" "}
-                Projects
+                <AiOutlineFundProjectionScreen style={{ marginBottom: "2px" }} /> Projects
               </Nav.Link>
             </Nav.Item>
 
@@ -86,13 +89,12 @@ function NavBar() {
               <Nav.Link
                 as={Link}
                 to="/resume"
+                className={getLinkClass("/resume")}
                 onClick={() => updateExpanded(false)}
               >
                 <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
               </Nav.Link>
             </Nav.Item>
-
-   
 
             <Nav.Item className="fork-btn">
               <Button

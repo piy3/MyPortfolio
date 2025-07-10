@@ -4,6 +4,7 @@ import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 import weather from "../../Assets/Projects/weather.png";
 import ShopAround from "../../Assets/Projects/shopAround.png";
+import topScorer from "../../Assets/Projects/topScorer.png";
 
 import tastybites from "../../Assets/Projects/tastybites.png";
 
@@ -19,6 +20,16 @@ function Projects() {
           Here are a few projects I've worked on recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={topScorer}
+              isBlog={false}
+              title="Top Scorer"
+              description="Top Scorer is a dynamic full-stack sports management platform built for real-time college tournaments. It features live score updates, participant tracking, and an interactive chat system. Designed with a focus on real-time collaboration and intuitive UX, the platform enables seamless coordination among organizers, players, and viewers. The project leverages WebSockets for low-latency updates and ensures secure access through JWT-based authentication."
+              ghLink="https://github.com/piy3/top_scorer"
+              demoLink="https://top-scorer-ecru.vercel.app/"
+            />
+          </Col>
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={ShopAround}

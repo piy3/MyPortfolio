@@ -1,0 +1,17 @@
+/* navbar.css */
+.nav-link {
+  color: white !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  /* color: #ccc !important; */
+}
+
+.active-link {
+  border-top: 2px solid purple;
+  border-right: 2px solid purple;
+  border-left: 2px solid purple;
+  scale: 1.2;
+  
+}

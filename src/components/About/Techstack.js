@@ -21,12 +21,12 @@ import {
   SiTailwindcss,
   SiMysql,
   SiGithub,
-} from "react-icons/si";
+} from "react-icons/si"; 
 
 
 function Techstack() {
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
+    <Row style={{ justifyContent: "center", paddingBottom: "50px" ,marginBottom:"10px"}}>
       <Col xs={4} md={2} className="tech-icons">
         <CgCPlusPlus />
         <div className="name"><h3>C++</h3></div>
